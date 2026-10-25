@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Space Grotesk", sans-serif;
+  background: #05070a;
+  color: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #05070a; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: rgba(85, 168, 255, .28); }
+
+.grid-bg {
+  background-image: linear-gradient(rgba(85, 168, 255, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(85, 168, 255, .045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 10%, transparent 90%);
+}
+
+.panel {
+  border: 1px solid #1d2732;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(15, 21, 29, .96), rgba(9, 12, 17, .98));
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #263341;
+  border-radius: 10px;
+  outline: none;
+  background: #080c11;
+  padding: 12px 14px;
+  color: #edf3f9;
+  transition: border-color .18s, box-shadow .18s;
+}
+.field:focus { border-color: #55a8ff; box-shadow: 0 0 0 3px rgba(85, 168, 255, .13); }
+.field::placeholder { color: #657383; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #55a8ff;
+  border-radius: 10px;
+  background: #55a8ff;
+  padding: 11px 17px;
+  color: #06101a;
+  font-weight: 700;
+  transition: transform .18s, background .18s, box-shadow .18s;
+}
+.btn-primary:hover { transform: translateY(-1px); background: #83c0ff; box-shadow: 0 7px 24px rgba(85, 168, 255, .2); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #2a3644;
+  border-radius: 10px;
+  background: #0c1117;
+  padding: 10px 14px;
+  color: #dce5ee;
+  transition: border-color .18s, background .18s;
+}
+.btn-secondary:hover { border-color: #55a8ff; background: #101923; }
+.label { display: block; margin-bottom: 7px; color: #98a7b7; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+@keyframes pulse-soft { 50% { opacity: .55; } }
+.pulse-soft { animation: pulse-soft 1.6s ease-in-out infinite; }
+
+@media (max-width: 640px) {
+  .panel { border-radius: 13px; }
+}
